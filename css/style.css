@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-weight: 600;
+    background-color: hsl(0, 0%, 10%);
+    overflow: hidden;
+    color: hsl(0, 0%, 95%);
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main {
+    display: flex; /* Используем flexbox для центрирования */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    height: 100vh; /* Задаем высоту body в 100% высоты окна */
+    padding: 30px; /* Отступы по краям */
+}
+
+.main_inside {
+    width: 100%; /* Занимает 100% доступной ширины в родительском элементе */
+    height: 100%; /* Занимает 100% доступной высоты в родительском элементе */
+    border: 1px solid white; /* Рамка */
+    padding: 10px; /* Внутренние отступы для содержимого */
+    box-sizing: border-box; /* Учитываем рамку и отступы в общей ширине и высоте */
+    max-width: 100%;
+    position: relative; /* Устанавливаем позиционирование для родительского элемента */
+}
+
+.main_header {
+    width: 35vw;
+    height: 25vw;
+    padding: 0;
+    margin: 0.1em 0 0 0.3em;
+}
+
+.main_header_title {
+    font-weight: 200;
+    margin: -0.05em;
+}
+
+.main_header_label {
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.main_header_nav {
+    margin-top: 50px;
+}
+
+.main_header_nav a {     
+    font-weight: bold;
+}
+
+.main_header_nav a:hover {
+    color: rgb(72, 72, 72);
+}
+
+.main_header_nav ol {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.content {
+    position: absolute; /* Используем абсолютное позиционирование */
+    bottom: 0; /* Позиционируем внизу */
+    right: 0; /* Позиционируем справа */
+    padding: 20px; /* Добавляем немного отступа, чтобы текст не прилипал к краям */
+    width: 20vw; /* Ширина будет зависеть от содержимого */
+    height: 50vh;
+    box-sizing: border-box; /* Учитываем отступы в ширине */
+    display: flex; /* Включаем flexbox */
+    flex-direction: column; /* Размещаем элементы вертикально */
+    justify-content: flex-end; /* Опускаем содержимое вниз */
+    align-items: end;
+    white-space: nowrap;
+    transition: all 0.3s ease; /* Плавное изменение размеров */
+}
+
+.home_aboutme {
+    line-height: 1.5;
+    font-size: small;
+}
+
+.home_aboutme span {
+    display: block; /* Каждое <span> будет отображаться как блочный элемент */
+}
+
+/* Стиль для плавного исчезновения и появления */
+.fade {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out; /* Здесь можно изменить скорость анимации */
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+@keyframes textChange {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Contact */
+.contact{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    width: 20vw;
+    height: 50vh;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+/* Стили для иконок LinkedIn и GitHub */
+.icon_ln {
+    max-width: 40px;
+    height: auto;
+    margin: 0 10px 10px 0;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Анимация при наведении */
+}
+
+/* Эффект при наведении на иконки */
+.icon_ln:hover {
+    transform: scale(1.1); /* Увеличение иконки */
+    opacity: 0.8;
+}
+
+/* Базовые стили для content, чтобы сохранять его в правом нижнем углу */
+.content, .contact {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    width: 20vw;
+    height: 50vh;
+    box-sizing: border-box;
+    white-space: normal;
+}
+/* Footer */
+
+/* Стили для мелкого текста под основным блоком */
+.footer_note {
+    position: absolute;
+    font-size: 10px; /* Размер текста */
+    color: #777; /* Цвет текста */
+    margin-top: -20px;
+    margin-left: 30px;
+}
+
+/* Контейнер для карточек проекта */
+.projects-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    height: 100%; /* Полная высота для прокрутки */
+    overflow-y: auto; /* Вертикальная прокрутка */
+}
+
+/* Карточки проекта */
+.project-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    background-color: #333333;
+}
+
+.project-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b3b3b3;
+}
+
+/* Когда выбрана вкладка "Projects" */
+.page-projects .content {
+    width: 50vw; /* Растягиваем до половины экрана */
+    height: 100vh; /* Полная высота экрана */
+    padding: 20px;
+}
+
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+
+    /* Основной контейнер .main */
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 15px;
+    }
+
+    /* Внутренний блок .main_inside */
+    .main_inside {
+        width: 100%; /* Занимает всю ширину на мобильных */
+        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Заголовок и навигация */
+    .main_header {
+        width: 90%; /* Сужаем ширину для лучшей читаемости */
+        margin: 0 auto; /* Центрируем на экране */
+    }
+
+    .main_header_title {
+        font-size: 24px; /* Уменьшенный размер, чтобы текст хорошо смотрелся на экране */
+    }
+
+    /* Навигация */
+    .main_header_nav ol {
+        row-gap: 10px; /* Немного уменьшаем расстояние между элементами */
+    }
+
+    /* Контент */
+    .content, .contact {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 90vw; /* Увеличиваем ширину до 90%, чтобы заполнить пространство */
+        height: auto; /* Автоматическая высота */
+        max-height: 40vh; /* Ограничиваем максимальную высоту */
+        padding: 15px;
+        box-sizing: border-box;
+        white-space: normal; /* Перенос текста на новые строки */
+    }
+
+    /* Текст о себе */
+    .home_aboutme {
+        font-size: 14px; /* Небольшое уменьшение для компактности */
+        line-height: 1.6;
+        float: none; /* Отмена плавающего положения */
+        text-align: left;
+    }
+
+    /* Подпись внизу */
+    .footer_note {
+        position: static;
+        font-size: 10px;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+/* Стили для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+    .main {
+        padding: 15px; /* Уменьшаем отступы */
+    }
+
+    .main_inside {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .main_header {
+        width: 90vw;
+        height: auto;
+        padding: 0;
+        margin: 0.5em 0;
+    }
+
+    .main_header_title {
+        font-size: 24px;
+    }
+
+    .main_header_label {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .main_header_nav {
+        margin-top: 20px;
+    }
+
+    .main_header_nav ol {
+        row-gap: 10px;
+    }
+
+    .content, .contact {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        box-sizing: border-box;
+        white-space: normal; /* Текст переносится на новые строки */
+        margin-top: 20px;
+    }
+
+    .footer_note {
+        position: static;
+        font-size: 10px;
+        text-align: center;
+        margin: 15px 0 0;
+    }
+
+    /* Иконки контактов уменьшаем */
+    .icon_ln {
+        max-width: 30px;
+    }
+}
+
+/* Стили для планшетов (от 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main_inside {
+        padding: 20px;
+    }
+
+    .main_header {
+        width: 80vw;
+        height: auto;
+        padding: 0;
+        margin: 0.5em 0;
+    }
+
+    .main_header_title {
+        font-size: 36px;
+    }
+
+    .main_header_label {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    .content, .contact {
+        width: 60vw;
+        height: auto;
+        padding: 10px;
+        margin-top: 20px;
+        white-space: normal;
+    }
+
+    .footer_note {
+        position: static;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Увеличиваем иконки для контактов */
+    .icon_ln {
+        max-width: 35px;
+    }
+}
+
+/* Стили для больших экранов (от 1024px) */
+@media (min-width: 1024px) {
+    .main_header_title {
+        font-size: 60px;
+    }
+
+    .main_inside {
+        padding: 30px;
+    }
+
+    .main_header {
+        width: 35vw;
+        height: auto;
+        padding: 0;
+        margin: 1em 0;
+    }
+
+    .main_header_title {
+        font-size: 60px;
+    }
+
+    .main_header_label {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+
+    .content, .contact {
+        width: 20vw;
+        height: 50vh;
+    }
+
+    .footer_note {
+        position: absolute;
+        font-size: 10px;
+        color: #777;
+        margin-top: -20px;
+        margin-left: 30px;
+    }
+}
+
