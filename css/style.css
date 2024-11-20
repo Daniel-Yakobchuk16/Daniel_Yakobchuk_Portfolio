@@ -1,4 +1,8 @@
-* {
+::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
+}
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -178,44 +182,63 @@ a {
 }
 
 /* Контейнер для карточек проекта */
-.projects-container {
-    display: grid;
-    gap: 20px;
+.projects{
+    width: 50vw;
+    height: auto;
+}
+.projects-container{
+    display: flex;
+    flex-direction: column; /* Располагаем элементы вертикально */
+    gap: 20px; /* Расстояние между проектами */
     padding: 20px;
-    grid-template-columns: 1fr;
-    height: 100%; /* Полная высота для прокрутки */
-    overflow-y: auto; /* Вертикальная прокрутка */
+    width: 100vw; /* Карточки растягиваются на половину экрана */
+    height: 100%; /* Полная высота блока */
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    box-sizing: border-box;
 }
 
-/* Карточки проекта */
-.project-card {
-    background-color: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
 
-.project-card:hover {
-    transform: translateY(-5px);
-    background-color: #333333;
-}
-
-.project-card h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #b3b3b3;
-}
-
-/* Когда выбрана вкладка "Projects" */
+/* When on the page projects */
 .page-projects .content {
-    width: 50vw; /* Растягиваем до половины экрана */
+    width: 50vw; /* Половина ширины экрана */
     height: 100vh; /* Полная высота экрана */
     padding: 20px;
+    box-sizing: border-box; /* Учитываем отступы */
+    overflow: hidden; /* Отключаем прокрутку родительского контейнера */
+    display: flex;
+    flex-direction: column; /* Для вертикального расположения контента */
+}
+
+/* Проекты */
+.project-card {
+    display: block; /* Стандартное блочное отображение */
+    width: 150%; /* Карточка занимает всю ширину родителя */
+    max-width: 400px; /* Ограничиваем максимальную ширину карточки */
+    background-color: #1a1a1a; /* Фон карточки */
+    padding: 20px; /* Внутренние отступы */
+    margin: 5px 0; /* Внешние отступы вокруг карточки */
+    border-radius: 8px; /* Скругленные углы */
+    transition: transform 0.3s ease, background-color 0.3s ease, margin 0.3s ease; /* Плавные переходы */
+    box-sizing: border-box; /* Учитываем отступы в ширине */
+}
+
+/* Эффект при наведении */
+.project-card:hover {
+    transform: translateY(-5px); /* Поднимаем карточку */
+}
+
+/* Заголовок проекта */
+.project-card h2 {
+    font-size: 20px; /* Размер шрифта заголовка */
+    color: #ffffff; /* Белый цвет текста */
+    margin-top: -12px;
+}
+
+/* Описание проекта */
+.project-card p {
+    font-size: 14px; /* Размер шрифта описания */
+    line-height: 1.6; /* Высота строки */
+    color: #b3b3b3; /* Серый цвет текста */
 }
 
 

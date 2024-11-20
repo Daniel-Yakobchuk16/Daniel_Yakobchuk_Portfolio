@@ -60,12 +60,8 @@ function loadContent(page) {
                                 <p>Another project description.</p>
                             </div>
                             <div class="project-card">
-                                <h2>Project Title 1</h2>
-                                <p>Description of the project goes here.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
+                                <h2>Project Title 3</h2>
+                                <p>Description of project 3.</p>
                             </div>
                             <div class="project-card">
                                 <h2>Project Title 1</h2>
@@ -74,6 +70,62 @@ function loadContent(page) {
                             <div class="project-card">
                                 <h2>Project Title 2</h2>
                                 <p>Another project description.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 3</h2>
+                                <p>Description of project 3.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 1</h2>
+                                <p>Description of the project goes here.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 2</h2>
+                                <p>Another project description.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>ProjectProjectProjectProjectProjectProjectProjectProjectProjectProjectProject Title 3</h2>
+                                <p>Description of project 3.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 1</h2>
+                                <p>Description of the project goes here.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 2</h2>
+                                <p>Another project description.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 3</h2>
+                                <p>Description of project 3.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 2</h2>
+                                <p>Another project description.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 3</h2>
+                                <p>Description of project 3.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 3</h2>
+                                <p>Description of project 3.</p>
+                            </div>
+                                                        <div class="project-card">
+                                <h2>Project Title 2</h2>
+                                <p>Another project description.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 3</h2>
+                                <p>Description of project 3.</p>
+                            </div>
+                                                        <div class="project-card">
+                                <h2>Project Title 2</h2>
+                                <p>Another project description.</p>
+                            </div>
+                            <div class="project-card">
+                                <h2>Project Title 3</h2>
+                                <p>Description of project 3.</p>
                             </div>
                         </div>
                     </div>
