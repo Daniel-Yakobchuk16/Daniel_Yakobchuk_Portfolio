@@ -1,4 +1,5 @@
 function loadContent(page) {
+    const body = document.body;
     const content = document.getElementById("content");
     const main = document.querySelector(".main_inside");
     const navLinks = document.querySelectorAll(".main_header_nav a");
@@ -19,6 +20,13 @@ function loadContent(page) {
     const currentLink = document.querySelector(`.main_header_nav a[href="javascript:void(0)"][onclick="loadContent('${page}')"]`);
     currentLink.textContent = "●"; // Устанавливаем текст на "●"
     currentLink.classList.add("selected"); // Добавляем класс selected
+
+    // Убираем или добавляем overflow-hidden в зависимости от страницы
+    if (page === "projects") {
+        body.classList.remove("overflow-hidden");
+    } else {
+        body.classList.add("overflow-hidden");
+    }
 
     // Добавляем анимацию исчезновения
     content.classList.remove("show");
@@ -50,85 +58,13 @@ function loadContent(page) {
             } else if (page === "projects") {
                 content.innerHTML = `
                     <div class="projects">
-                        <div class="projects-container">
-                            <div class="project-card">
-                                <h2>Project Title 1</h2>
-                                <p>Description of the project goes here.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 1</h2>
-                                <p>Description of the project goes here.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 1</h2>
-                                <p>Description of the project goes here.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>ProjectProjectProjectProjectProjectProjectProjectProjectProjectProjectProject Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 1</h2>
-                                <p>Description of the project goes here.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
-                                                        <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
-                                                        <div class="project-card">
-                                <h2>Project Title 2</h2>
-                                <p>Another project description.</p>
-                            </div>
-                            <div class="project-card">
-                                <h2>Project Title 3</h2>
-                                <p>Description of project 3.</p>
-                            </div>
+                        <div class="projects_container">
+                            <p class="project_label">In progress / Female health app</p>
+                            <a href="#"><h1 class="project_tittle">Fylo</h1></a>
                         </div>
                     </div>
+                    
+                    
                 `;
             } else if (page === "info") {
                 content.innerHTML = `

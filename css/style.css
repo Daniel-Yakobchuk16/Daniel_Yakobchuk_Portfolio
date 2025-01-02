@@ -9,8 +9,11 @@
     font-family: 'PP Neue Montreal', sans-serif;
     font-weight: 600;
     background-color: hsl(0, 0%, 10%);
-    overflow: hidden;
     color: hsl(0, 0%, 95%);
+}
+
+body.overflow-hidden {
+    overflow: hidden;
 }
 
 p {
@@ -42,7 +45,9 @@ a {
     padding: 10px; /* Внутренние отступы для содержимого */
     box-sizing: border-box; /* Учитываем рамку и отступы в общей ширине и высоте */
     max-width: 100%;
-    position: relative; /* Устанавливаем позиционирование для родительского элемента */
+    position: relative; /* Убедитесь, что позиция задана */
+    z-index: 10; /* Установите высокий z-index */
+    background: hsl(0, 0%, 10%); /* Убедитесь, что есть фон */
 }
 
 .main_header {
@@ -50,6 +55,7 @@ a {
     height: 25vw;
     padding: 0;
     margin: 0.1em 0 0 0.3em;
+    overflow: hidden;
 }
 
 .main_header_title {
@@ -170,9 +176,65 @@ a {
     box-sizing: border-box;
     white-space: normal;
 }
-/* Footer */
 
-/* Стили для мелкого текста под основным блоком */
+/* Projects */
+.projects{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+    width: 50vw;
+    height: 50vh;
+    box-sizing: border-box;
+    white-space: nowrap;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+/* Базовые стили для projects, чтобы сохранять его в правом нижнем углу */
+.content .projects {
+    position: absolute;
+    right: 0;
+    bottom: 80%; 
+    padding: 20px;
+    width: 50vw;
+    height: auto;
+    box-sizing: border-box;
+    white-space: normal;
+    background: transparent; /* Убедитесь, что фон прозрачный */
+    z-index: 5; /* Убедитесь, что они ниже основного контейнера */
+}
+
+.projects_container {
+    display: flex; /* Используем Flexbox для горизонтального размещения */
+    justify-content: flex-end; /* Все элементы выравниваются по правому краю */
+    align-items: center; /* Центрируем элементы по вертикали */
+    gap: 20px; /* Отступ между <p> и <h1> */
+    width: 100%; /* Контейнер занимает всю ширину */
+}
+
+.project_label {
+    margin: 0;
+    font-size: 16px; /* Настраиваем размер шрифта */
+    white-space: nowrap; /* Отключаем перенос строк */
+    overflow: hidden; /* Ограничиваем текст, чтобы не выходил за пределы */
+    text-overflow: ellipsis; /* Добавляем многоточие, если текст слишком длинный */
+    text-align: right; /* Текст выравнивается по правому краю */
+}
+
+.project_tittle {
+    margin: 0;
+    font-size: 84px; /* Размер шрифта заголовка */
+    white-space: nowrap; /* Отключаем перенос строк */
+    text-align: right; /* Текст выравнивается вправо */
+    flex-shrink: 0; /* Заголовок не сжимается */
+}
+
+
+/* Footer */
+/* Trademark */
+
 .footer_note {
     position: absolute;
     font-size: 10px; /* Размер текста */
@@ -181,64 +243,16 @@ a {
     margin-left: 30px;
 }
 
-/* Контейнер для карточек проекта */
-.projects{
-    width: 50vw;
-    height: auto;
+.project_tittle{
+    justify-content: flex-end;
+    margin: 0;
+    text-align: end;
+    font-size: 84px; /* Размер шрифта заголовка */
 }
-.projects-container{
-    display: flex;
-    flex-direction: column; /* Располагаем элементы вертикально */
-    gap: 20px; /* Расстояние между проектами */
-    padding: 20px;
-    width: 100vw; /* Карточки растягиваются на половину экрана */
-    height: 100%; /* Полная высота блока */
-    overflow-y: auto; /* Включаем вертикальную прокрутку */
-    box-sizing: border-box;
-}
-
-
-/* When on the page projects */
-.page-projects .content {
-    width: 50vw; /* Половина ширины экрана */
-    height: 100vh; /* Полная высота экрана */
-    padding: 20px;
-    box-sizing: border-box; /* Учитываем отступы */
-    overflow: hidden; /* Отключаем прокрутку родительского контейнера */
-    display: flex;
-    flex-direction: column; /* Для вертикального расположения контента */
-}
-
-/* Проекты */
-.project-card {
-    display: block; /* Стандартное блочное отображение */
-    width: 150%; /* Карточка занимает всю ширину родителя */
-    max-width: 400px; /* Ограничиваем максимальную ширину карточки */
-    background-color: #1a1a1a; /* Фон карточки */
-    padding: 20px; /* Внутренние отступы */
-    margin: 5px 0; /* Внешние отступы вокруг карточки */
-    border-radius: 8px; /* Скругленные углы */
-    transition: transform 0.3s ease, background-color 0.3s ease, margin 0.3s ease; /* Плавные переходы */
-    box-sizing: border-box; /* Учитываем отступы в ширине */
-}
-
-/* Эффект при наведении */
-.project-card:hover {
-    transform: translateY(-5px); /* Поднимаем карточку */
-}
-
-/* Заголовок проекта */
-.project-card h2 {
-    font-size: 20px; /* Размер шрифта заголовка */
-    color: #ffffff; /* Белый цвет текста */
-    margin-top: -12px;
-}
-
-/* Описание проекта */
-.project-card p {
-    font-size: 14px; /* Размер шрифта описания */
-    line-height: 1.6; /* Высота строки */
-    color: #b3b3b3; /* Серый цвет текста */
+.project_label{
+    margin: 0;
+    font-size: 16px; /* Размер шрифта заголовка */
+    margin-top: 3vh;
 }
 
 
@@ -437,7 +451,7 @@ a {
 
     .content, .contact {
         width: 20vw;
-        height: 50vh;
+        height: 100%;
     }
 
     .footer_note {
