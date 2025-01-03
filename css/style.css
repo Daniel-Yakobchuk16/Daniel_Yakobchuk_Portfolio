@@ -232,8 +232,8 @@ a {
 }
 
 
-/* Footer */
-/* Trademark */
+/* Footer / Trademark */
+
 
 .footer_note {
     position: absolute;
@@ -319,6 +319,8 @@ a {
         text-align: center;
         margin-top: 15px;
     }
+
+   
 }
 
 /* Стили для мобильных устройств (до 768px) */
@@ -378,12 +380,14 @@ a {
     .icon_ln {
         max-width: 30px;
     }
+
 }
 
 /* Стили для планшетов (от 768px до 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .main_inside {
         padding: 20px;
+        position: relative; /* Позволяет дочерним элементам позиционироваться внутри контейнера */
     }
 
     .main_header {
@@ -421,6 +425,25 @@ a {
     .icon_ln {
         max-width: 35px;
     }
+    /* Projects */
+    .content .projects {
+        position: absolute; 
+        top: 0; /* Расположить в верхней части родительского контейнера */
+        right: 0;
+        padding: 20px;
+        width: 55vw;
+        height: auto;
+        box-sizing: border-box;
+        white-space: normal;
+        background: transparent; /* Убедитесь, что фон прозрачный */
+        z-index: 5; /* Блок будет выше других элементов */
+    }
+
+    /* Смещение других элементов ниже */
+    .main_inside, .content, .main_header {
+        margin-top: 100px; /* Учитываем высоту блока `.projects` */
+    }
+ 
 }
 
 /* Стили для больших экранов (от 1024px) */
@@ -461,5 +484,30 @@ a {
         margin-top: -20px;
         margin-left: 30px;
     }
+   
 }
+
+.project_label, .project_tittle {
+    transition: all 0.3s ease; /* Плавные изменения стилей */
+}
+
+.project_label:hover, .project_tittle:hover {
+    color: hsl(0, 0%, 80%); /* Эффект при наведении */
+} 
+
+/* Дополнительные улучшения */
+.footer_note {
+    font-size: 12px; /* Увеличиваем текст для больших экранов */
+}
+
+.icon_ln {
+    cursor: pointer; /* Указываем, что иконки кликабельны */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Плавные эффекты */
+}
+
+.icon_ln:hover {
+    transform: scale(1.2); /* Увеличение иконки при наведении */
+    opacity: 0.7; /* Прозрачность при наведении */
+} 
+
 

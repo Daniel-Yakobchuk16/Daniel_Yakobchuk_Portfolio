@@ -66,15 +66,16 @@ function loadContent(page) {
                     
                     
                 `;
-            } else if (page === "info") {
-                content.innerHTML = `
-                    <div class="info">
-                        <span>Info about Daniel Yakobchuk</span>
-                        <span>Programming Skills: HTML, CSS, JavaScript</span>
-                        <span>Current Goals: Becoming a Full-Stack Developer</span>
-                    </div>
-                `;
-            } else if (page === "contact") {
+            } //else if (page === "info") {
+            //     content.innerHTML = `
+            //         <div class="info">
+            //             <span>Info about Daniel Yakobchuk</span>
+            //             <span>Programming Skills: HTML, CSS, JavaScript</span>
+            //             <span>Current Goals: Becoming a Full-Stack Developer</span>
+            //         </div>
+            //     `;
+            // }  
+            else if (page === "contact") {
                 content.innerHTML = `
                     <div class="contact">
                         <a href="https://www.linkedin.com/in/daniel-yakobchuk/">
