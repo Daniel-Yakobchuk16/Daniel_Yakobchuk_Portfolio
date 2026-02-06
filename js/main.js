@@ -79,10 +79,10 @@ function loadContent(page) {
                 content.innerHTML = `
                     <div class="contact">
                         <a href="https://www.linkedin.com/in/daniel-yakobchuk/">
-                            <img src="/images/linkedin.png" alt="LinkedIn" class="icon_ln">
+                            <img src="images/linkedin.png" alt="LinkedIn" class="icon_ln">
                         </a>
                         <a href="https://github.com/Daniel-Yakobchuk16">
-                            <img src="/images/github.png" alt="GitHub" class="icon_ln">
+                            <img src="images/github.png" alt="GitHub" class="icon_ln">
                         </a>
                     </div>
                 `;
